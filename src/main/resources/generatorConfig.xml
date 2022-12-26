@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC " -//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+
+        <classPathEntry location="/Users/wangyuhao/personal/java/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar"/>
+    <context id="default" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/db_example"
+                        userId="root"
+                        password="123456"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.jd.jingqi.manager.common.domain.model"
+
+                                        targetProject="/Users/zhangchunsheng20/workspace/jd/jingqi-manager/src/main/java">
+<!--            targetProject="D:\WorkProject\jingqi-manager\src\main\java">-->
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper/source"
+                         targetProject="/Users/zhangchunsheng20/workspace/jd/jingqi-manager/src/main/resources">
+<!--                         targetProject="D:\WorkProject\jingqi-manager\src\main\resources">-->
+
+
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.jd.jingqi.manager.core.dao.source"
+                             targetProject="/Users/zhangchunsheng20/workspace/jd/jingqi-manager/src/main/java"
+                             type="XMLMAPPER">
+
+<!--            targetProject="D:\WorkProject\jingqi-manager\src\main\java"-->
+
+
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+<!--        <table tableName="jq_account" enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false"  enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <generatedKey column="id" sqlStatement="Mysql"/>-->
+<!--        </table>-->
+            <table tableName="jq_award_receive_record" enableCountByExample="false" enableUpdateByExample="false"
+                   enableDeleteByExample="false"  enableSelectByExample="false" selectByExampleQueryId="false">
+                <generatedKey column="id" sqlStatement="Mysql"/>
+            </table>
+    </context>
+</generatorConfiguration>
